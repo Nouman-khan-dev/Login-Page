@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'AR One Sans', sans-serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(145deg,#bff8f2 , #9bd4ec);
+}
+
+main{
+    width: 80%;
+    height: 75vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    box-shadow: 0px 0 14px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #f1f4f7;
+    display: flex;
+}
+.container{
+    /* position: relative; */
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+    text-align: center;
+    padding: 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.container  h1{
+    font-size: 37px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.container > p{
+    color: gray;
+}
+
+.icons{
+    /* border: 1px  solid black; */
+    display: flex;
+    gap: 20px;
+}
+.icons span{
+    /* border:1px solid black; */
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 3px 3px 4px 1px #bcb4b4;
+    background-color: #fff;
+    cursor: pointer;
+}
+.inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+input{
+    width: 100%;
+    height: 40px;
+    background-color: #a0a0a05c;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.container > button{
+    width: 119px;
+    height: 35px;
+    border-radius: 10px;
+    /* padding: 10px 20px; */
+    background-color: #009688;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: 400;
+    
+}
+/* #right{
+    gap: 16px;
+} */
+#right input{
+    height: 37px ;
+}
+/* ------------------------------------- */
+.contentOverlay{
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+    width: 50%;
+    height: 100%;
+    /* background: #00000072; */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+    transform: translateX(0%);
+    transition: all .7s;
+    /* border: 1px solid red; */
+    text-align: center;
+}
+/* ------------------------------------------ */
+.contentOverlay.leftO{
+    left: 0%;
+    opacity: 1;
+    z-index: 5;
+}
+.contentOverlay.rightO{
+  opacity: 1;
+    right: 0%;
+    z-index: 5;
+}
+
+ .contentOverlay.leftO.active{
+    opacity: 0;
+    transform: translateX(-100%);
+    z-index: 0;
+    transition: .7s;
+}
+.contentOverlay.rightO.active{
+   opacity: 0;
+   transform: translateX(100%);
+   z-index: 0;
+   transition: .7s;
+
+} 
+/* ---------------------------------- */
+
+.contentOverlay button{
+    width: 112px;
+    height: 35px;
+    border-radius: 8px;
+    font-weight: 500;
+    background: none;
+    color: white;
+    outline: none;
+    border: 2px solid white;
+    /* z-index: 1; */
+}
+/* .contentOverlay p ,.contentOverlay h1{
+    z-index: 99;
+} */
+
+
+
+.overlay{
+    width:50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color:  #009688;
+    z-index: 1;
+}
+/* --------------------------------------------------------- */
+.overlay.left{
+    left: 0;
+    border-top-right-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+    transform: translateX(0);
+    transition: all .7s;
+    /* animation: moveLeft 1s 1; */
+    z-index: 4;
+}
+/* @keyframes moveLeft {
+    0%,100%{
+        
+    }
+} */
+.overlay.right{
+    /* right: 0; */
+    border-top-left-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+    transition: all .7s;
+    /* animation: moveRight 1s 1; */
+    transform: translateX(100%);
+    z-index: 4;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+/* ------------------------------------------- */
+.container{
+    position: absolute;
+}
+.container.left{
+    left: 0%;
+    opacity:0;
+    z-index: 0;
+}
+.container.left.moveL{
+    opacity: 1;
+    left: 0;
+    transition: .7s all;
+}
+.container.right{
+    right: 15%;
+    opacity:0;
+    z-index: 0;
+}
+.container.right.moveR{
+    right: 0;
+    opacity: 1;
+    transition: .7s all;
+}
+.container.left.active{
+    transform: translateX(50%);
+    z-index: 0;
+    transition: .7s;
+    opacity: 0;
+    /* z-index: 3; */
+    /* display: none; */
+}
+
+.container.right.active{
+    transform: translateX(-50%);
+    transition: .7s;
+    opacity: 0;
+    z-index: -1;
+    /* display: none; */
+}
+
+
+/* -------------------- */
+
